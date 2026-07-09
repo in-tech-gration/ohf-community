@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.9.1 - 2026-07-09
+
+### Fixed
+
+* Fix 'NavigationDuplicated: Avoided redundant navigation to current location'
+
 ## 5.9.0 - 2024-03-24
 
 ### Changed
