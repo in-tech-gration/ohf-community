@@ -2,6 +2,10 @@
 
 ## 5.9.1 - 2026-07-09
 
+### Added
+
+* Add sorting and filtering options to Visitor search
+
 ### Fixed
 
 * Fix 'NavigationDuplicated: Avoided redundant navigation to current location'
