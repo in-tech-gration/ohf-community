@@ -150,15 +150,22 @@ export default {
             handler(value) {
                 this.showRegistrationForm = false;
                 this.searched = false;
+
+                const currentSearch = this.$route.query.search;
+                const nextQuery = value.length > 0 ? { search: value } : { search: undefined };
+
+                if (currentSearch !== value) {
+                    this.$router.replace({ query: nextQuery }).catch((err) => {
+                        if (err.name !== "NavigationDuplicated") {
+                            console.error(err);
+                        }
+                    });
+                }
+
                 if (value.length > 0) {
-                    this.$router.replace({ query: { search: value } });
                     this.searchVisitors();
-                    sessionStorage.setItem(
-                        "visitors.checkin.filter",
-                        this.search
-                    );
+                    sessionStorage.setItem("visitors.checkin.filter", this.search);
                 } else {
-                    this.$router.replace({ query: { search: undefined } });
                     this.visitors = [];
                     sessionStorage.removeItem("visitors.checkin.filter");
                 }
