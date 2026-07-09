@@ -261,3 +261,7 @@ Stop the application:
 ```bash
 sail down
 ```
+
+## Internationalization
+
+Edit `/lang/de.json` and use `$t("English Term")` on the Frontend (Vue.js)
